@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <StartupObject>ConstantWrite.Program</StartupObject>
+    <Authors>Lukas Langrock</Authors>
+    <Description>Creates a constant data stream which gets written to your disk</Description>
+    <Copyright>2019</Copyright>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/Lukas34/ConstantWrite</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Lukas34/ConstantWrite</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <Version>0.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
