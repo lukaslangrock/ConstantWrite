@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 
 namespace ConstantWrite
 {
@@ -11,7 +10,7 @@ namespace ConstantWrite
         static void Main()
         {
             // welcome
-            Console.WriteLine("Constant Write v0.0.1 PRE-RELEASE");
+            Console.WriteLine("Constant Write v0.0.2 PRE-RELEASE");
             Console.WriteLine("Copyright 2019 Lukas Langrock. All rights reserved.");
             Console.WriteLine("This is an open-source project available on GitHub: " + GitHubLink);
             Console.WriteLine(System.Environment.NewLine + "THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." + System.Environment.NewLine);
@@ -54,9 +53,11 @@ namespace ConstantWrite
             switch (id)
             {
                 case 1:
+                    // not implemented yet
                     break;
 
                 case 2:
+                    // open config manager
                     Config config = new Config();
                     config.OpenConfigEditor();
                     break;

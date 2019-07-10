@@ -1,9 +1,8 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace ConstantWrite
 {
-
     public class ConfigObject
     {
         public string StoragePath { get; set; }
@@ -13,16 +12,16 @@ namespace ConstantWrite
 
     class Config
     {
-        public bool AllowExit = false;
+        private bool AllowExit = false;
 
-        public ConfigObject GetConfig()
+        private ConfigObject GetConfig()
         {
             string data = System.IO.File.ReadAllText("config.json");
             ConfigObject config = JsonConvert.DeserializeObject<ConfigObject>(data);
             return config;
         }
 
-        public void SaveConfig(ConfigObject config)
+        private void SaveConfig(ConfigObject config)
         {
             string data = JsonConvert.SerializeObject(config, Formatting.Indented);
             System.IO.File.WriteAllText("config.json", data);
@@ -33,7 +32,6 @@ namespace ConstantWrite
             // CLI editor for config
             Console.Write("Please Wait (...)");
             ConfigObject config = GetConfig();
-            //Console.SetCursorPosition(0, Console.CursorTop);
             ClearCurrentConsoleLine();
 
             while (AllowExit == false)
@@ -57,7 +55,7 @@ namespace ConstantWrite
 
                 Console.WriteLine(System.Environment.NewLine); // for nice formatting
                 int id = Convert.ToInt32(menu_selection);
-                
+
                 switch (id)
                 {
                     case 1:
@@ -103,8 +101,7 @@ namespace ConstantWrite
                         if (newdata3 == "" || newdata3 == " ") { Console.WriteLine("Canceled!"); }
                         else
                         {
-                            if (newdata3 != "true" && newdata3 != "false") { Console.WriteLine("Error: Invalid input"); }
-                            else if (newdata3 == "true")
+                            if (newdata3 == "true" || newdata3 == "True")
                             {
                                 Console.Write("Saving ...");
                                 config.AutoClean = true;
@@ -112,7 +109,7 @@ namespace ConstantWrite
                                 ClearCurrentConsoleLine();
                                 Console.WriteLine("Changes saved!");
                             }
-                            else if (newdata3 == "false")
+                            else if (newdata3 == "false" || newdata3 == "False")
                             {
                                 Console.Write("Saving ...");
                                 config.AutoClean = false;
@@ -120,18 +117,20 @@ namespace ConstantWrite
                                 ClearCurrentConsoleLine();
                                 Console.WriteLine("Changes saved!");
                             }
+                            else if (newdata3 != "true" && newdata3 != "false") { Console.WriteLine("Error: Invalid input"); }
                         }
                         Console.WriteLine(); // for nice formatting
                         break;
 
                     case 4:
+                        // end menu loop to fall back to main menu
                         AllowExit = true;
                         break;
                 }
             }
         }
 
-        private void ClearCurrentConsoleLine()
+        private void ClearCurrentConsoleLine() // clone from Program.cs but non-static
         {
             int currentLineCursor = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
