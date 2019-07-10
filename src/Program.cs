@@ -8,7 +8,7 @@ namespace ConstantWrite
         public static bool AllowExit = false;
         public const string GitHubLink = "https://github.com/Lukas34/ConstantWrite";
 
-        static void Main(string[] args)
+        static void Main()
         {
             // welcome
             Console.WriteLine("Constant Write v0.0.1 PRE-RELEASE");
@@ -57,6 +57,8 @@ namespace ConstantWrite
                     break;
 
                 case 2:
+                    Config config = new Config();
+                    config.OpenConfigEditor();
                     break;
 
                 case 3:

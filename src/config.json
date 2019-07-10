@@ -1,3 +1,5 @@
 {
-
+  "StoragePath": "temp",
+  "BlockSize": "1024",
+  "AutoClean": true
 }
