@@ -38,7 +38,7 @@ namespace ConstantWrite
             {
                 Console.WriteLine("[----- Configuration -----]");
                 Console.WriteLine("1. Drive/Folder to torture test");
-                Console.WriteLine("2. Size of individual test files");
+                Console.WriteLine("2. Size of test files");
                 Console.WriteLine("3. Autoclean after end of test");
                 Console.WriteLine("4. Return to main menu");
                 Console.WriteLine();
@@ -76,13 +76,16 @@ namespace ConstantWrite
                         break;
 
                     case 2:
-                        Console.WriteLine("Editing individual test file size (leave blank for current)");
+                        Console.WriteLine("Editing test file size (leave blank for current)");
+                        Console.WriteLine("INFO: This number will be the size of test files in MB");
                         Console.WriteLine("Current: " + config.FileSize);
                         Console.Write("New: ");
                         string newdata2 = Console.ReadLine();
                         if (newdata2 == "" || newdata2 == " ") { Console.WriteLine("Canceled!"); }
                         else
                         {
+                            if (Convert.ToInt32(newdata2) < 1) { newdata2 = "1"; Console.WriteLine("INFO: Your input was autocorrected to 1 MB because the size cannot be samller than 1 MB"); }
+
                             Console.Write("Saving ...");
                             config.FileSize = Convert.ToInt32(newdata2);
                             SaveConfig(config);

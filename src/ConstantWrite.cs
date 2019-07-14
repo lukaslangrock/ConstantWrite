@@ -7,7 +7,7 @@ namespace ConstantWrite
     {
         string author = "Lukas Langrock";
         string version = "0.0.1 PRE-RELEASE";
-        string github = "https://github.com/lukas34/ConstantWrite/";
+        string github = "https://github.com/Lukas34/ConstantWrite/";
         string license = "MIT";
         Config ConfigClass = new Config();
         ConfigObject config = new ConfigObject();
@@ -17,11 +17,11 @@ namespace ConstantWrite
         /// </summary>
         public void Initialize()
         {
-            Console.WriteLine("[//] Initializing ConstantWrite torture test [\\]");
-            Console.WriteLine("[//] Author: " + author + " [\\]");
-            Console.WriteLine("[//] Version: " + version + " [\\]");
-            Console.WriteLine("[//] GitHub: " + github + " [\\]");
-            Console.WriteLine("[//] License: " + license + " [\\]");
+            Console.WriteLine("[//] Initializing ConstantWrite torture test [\\\\]");
+            Console.WriteLine("[//] Author: " + author + " [\\\\]");
+            Console.WriteLine("[//] Version: " + version + " [\\\\]");
+            Console.WriteLine("[//] GitHub: " + github + " [\\\\]");
+            Console.WriteLine("[//] License: " + license + " [\\\\]");
 
             // Read config
             Console.Write("[#] Reading config.json");
@@ -41,7 +41,7 @@ namespace ConstantWrite
             if (valid == true) { Console.WriteLine("[+] Validation complete"); }
             else { Console.WriteLine("[!] Validation failed"); }
 
-            Console.WriteLine("[//] Initialization finnished [\\]" + Environment.NewLine);
+            Console.WriteLine("[//] Initialization finnished [\\\\]" + Environment.NewLine);
         }
 
         /// <summary>
@@ -66,6 +66,8 @@ namespace ConstantWrite
                 ClearCurrentConsoleLine();
                 Console.WriteLine("[+] Cleaned up");
             }
+
+            Console.WriteLine("[+] Torture test ended" + Environment.NewLine);
         }
 
         /// <summary>
