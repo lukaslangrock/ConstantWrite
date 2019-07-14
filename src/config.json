@@ -1,5 +1,5 @@
 {
   "StoragePath": "temp",
-  "BlockSize": "1024",
+  "FileSize": "8",
   "AutoClean": true
 }

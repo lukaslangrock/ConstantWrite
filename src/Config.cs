@@ -7,14 +7,14 @@ namespace ConstantWrite
     {
         public string StoragePath { get; set; }
         public bool AutoClean { get; set; }
-        public string BlockSize { get; set; }
+        public int FileSize { get; set; }
     }
 
     class Config
     {
         private bool AllowExit = false;
 
-        private ConfigObject GetConfig()
+        public ConfigObject GetConfig()
         {
             string data = System.IO.File.ReadAllText("config.json");
             ConfigObject config = JsonConvert.DeserializeObject<ConfigObject>(data);
@@ -77,14 +77,14 @@ namespace ConstantWrite
 
                     case 2:
                         Console.WriteLine("Editing individual test file size (leave blank for current)");
-                        Console.WriteLine("Current: " + config.BlockSize);
+                        Console.WriteLine("Current: " + config.FileSize);
                         Console.Write("New: ");
                         string newdata2 = Console.ReadLine();
                         if (newdata2 == "" || newdata2 == " ") { Console.WriteLine("Canceled!"); }
                         else
                         {
                             Console.Write("Saving ...");
-                            config.BlockSize = newdata2;
+                            config.FileSize = Convert.ToInt32(newdata2);
                             SaveConfig(config);
                             ClearCurrentConsoleLine();
                             Console.WriteLine("Changes saved!");

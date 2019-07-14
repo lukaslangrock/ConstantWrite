@@ -53,7 +53,9 @@ namespace ConstantWrite
             switch (id)
             {
                 case 1:
-                    // not implemented yet
+                    ConstantWrite write = new ConstantWrite();
+                    write.Initialize();
+                    write.RunTortureTest();
                     break;
 
                 case 2:
