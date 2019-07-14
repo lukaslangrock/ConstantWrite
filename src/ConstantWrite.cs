@@ -32,7 +32,7 @@ namespace ConstantWrite
             // Validate config
             Console.Write("[#] Validating settings");
             bool valid = true;
-            if (config.FileSize <= 1) { valid = false; };
+            if (config.FileSize < 1) { valid = false; };
             if (!config.StoragePath.EndsWith("/") || !config.StoragePath.EndsWith("\\")) { config.StoragePath = config.StoragePath += "/"; }
             try { if (!Directory.Exists(config.StoragePath)) { Directory.CreateDirectory(config.StoragePath); } }
             catch (Exception ex) { valid = false; ClearCurrentConsoleLine(); Console.WriteLine("[+] Error: " + ex.ToString()); }
