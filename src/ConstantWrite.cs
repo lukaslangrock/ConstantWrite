@@ -56,6 +56,16 @@ namespace ConstantWrite
             {
                 while (!Console.KeyAvailable) { Worker(); }
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+
+            Console.WriteLine("[+] Stopped!");
+
+            if (config.AutoClean == true)
+            {
+                Console.Write("[#] Cleaning up...");
+                Directory.Delete(config.StoragePath, true);
+                ClearCurrentConsoleLine();
+                Console.WriteLine("[+] Cleaned up");
+            }
         }
 
         /// <summary>
