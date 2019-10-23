@@ -1,0 +1,26 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+    feedsToUse: 'select'
+  displayName: 'NuGet restore'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'src'
+    arguments: '-c Release -o build'
+  displayName: '.NET Core build'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'build'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
