@@ -1,5 +1,5 @@
 # Constant Write
-[![Build status](https://lukaslangrock.visualstudio.com/ConstantWrite/_apis/build/status/.NET%20Core-CI)](https://lukaslangrock.visualstudio.com/ConstantWrite/_build/latest?definitionId=19)
+[![Build Status](https://dev.azure.com/lukaslangrock/GitHub%20Pipelines/_apis/build/status/Lukas34.ConstantWrite?branchName=master)](https://dev.azure.com/lukaslangrock/GitHub%20Pipelines/_build/latest?definitionId=33&branchName=master)
 
 ## About
 This little CLI tool lets you run torture tests on your drives.
