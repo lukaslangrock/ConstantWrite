@@ -5,7 +5,7 @@ namespace ConstantWrite
     class Program
     {
         public static bool AllowExit = false;
-        public const string GitHubLink = "https://github.com/Lukas34/ConstantWrite";
+        public const string GitHubLink = "https://github.com/LukasLangrock/ConstantWrite";
 
         static void Main()
         {

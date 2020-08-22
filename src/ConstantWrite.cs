@@ -7,7 +7,7 @@ namespace ConstantWrite
     {
         string author = "Lukas Langrock";
         string version = "0.0.1 PRE-RELEASE";
-        string github = "https://github.com/Lukas34/ConstantWrite/";
+        string github = "https://github.com/LukasLangrock/ConstantWrite/";
         string license = "MIT";
         Config ConfigClass = new Config();
         ConfigObject config = new ConfigObject();
